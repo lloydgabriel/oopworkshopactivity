@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9803d6f1-8fe3-447f-889e-c89f62c09005" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oopworkshopactivity/AddSongController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oopworkshopactivity/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oopworkshopactivity/DashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oopworkshopactivity/DatabaseHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oopworkshopactivity/EditSongController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oopworkshopactivity/Launcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oopworkshopactivity/Song.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/oopworkshopactivity/addsong.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/oopworkshopactivity/dashboard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/oopworkshopactivity/editsong.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="module-info" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "lloydgabriel"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/lloydgabriel/oopworkshopactivity.git",
+    "accountId": "fd018731-4b5d-4c28-a283-c34ea538e7d4"
+  }
+}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0299770037289144" />
+      <entry key="MS500" value="1.4958583653691466" />
+      <entry key="S2" value="1.8391882184069381" />
+      <entry key="S5" value="1.987240739938979" />
+      <entry key="S10" value="2.5986778511973894" />
+      <entry key="S30" value="9.716370857353956" />
+      <entry key="S60" value="28.21059664783026" />
+      <entry key="M2" value="55.161803821047286" />
+      <entry key="M5" value="85.20344984471467" />
+      <entry key="M10" value="99.39795133246581" />
+      <entry key="M15" value="105.32230969927205" />
+      <entry key="M30" value="112.96416783595454" />
+      <entry key="H1" value="118.13002706670153" />
+      <entry key="H2" value="121.29354704610643" />
+      <entry key="H4" value="123.06970061742064" />
+      <entry key="D1" value="124.66668800976672" />
+      <entry key="W1" value="124.95208759215473" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.948148672790519E-82" />
+      <entry key="S2" value="3.73598844416276E-21" />
+      <entry key="S5" value="6.74469335930364E-9" />
+      <entry key="S10" value="8.212608208908815E-5" />
+      <entry key="S30" value="0.04346707017467179" />
+      <entry key="S60" value="0.20848757798648762" />
+      <entry key="M2" value="0.4566043998764001" />
+      <entry key="M5" value="0.7308294452371085" />
+      <entry key="M10" value="0.8548856328405038" />
+      <entry key="M15" value="0.900752229226204" />
+      <entry key="M30" value="0.9490796748567549" />
+      <entry key="H1" value="0.9742072032461849" />
+      <entry key="H2" value="0.9870193530251499" />
+      <entry key="H4" value="0.9934884765437147" />
+      <entry key="D1" value="0.9989117898794811" />
+      <entry key="W1" value="0.9998444688603559" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.8419157332654064" />
+      <entry key="MS500" value="1.4349370215237034" />
+      <entry key="S2" value="1.8199325315821067" />
+      <entry key="S5" value="1.9789065588528578" />
+      <entry key="S10" value="2.59343284570519" />
+      <entry key="S30" value="9.748242176325332" />
+      <entry key="S60" value="28.398329335455582" />
+      <entry key="M2" value="55.59723040933089" />
+      <entry key="M5" value="85.92106756419163" />
+      <entry key="M10" value="100.24503552055812" />
+      <entry key="M15" value="106.21742695124665" />
+      <entry key="M30" value="113.91002990911498" />
+      <entry key="H1" value="119.10244136209201" />
+      <entry key="H2" value="122.27960416936729" />
+      <entry key="H4" value="124.06268809765074" />
+      <entry key="D1" value="125.66551318735472" />
+      <entry key="W1" value="125.95191960654539" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3E7iU8utvgM3aBCIqz5aggDmd2Y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "Maven.oopworkshopactivity [clean].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ADMIN/IdeaProjects/oopworkshopactivity",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9803d6f1-8fe3-447f-889e-c89f62c09005" name="Changes" comment="" />
+      <created>1779536028036</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1779536028036</updated>
+      <workItem from="1779536029907" duration="404000" />
+      <workItem from="1779536956273" duration="3347000" />
+    </task>
+    <task id="LOCAL-00001" summary="commit">
+      <option name="closed" value="true" />
+      <created>1779540335957</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779540335958</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+  </component>
+</project>
