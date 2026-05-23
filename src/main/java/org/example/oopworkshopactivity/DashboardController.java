@@ -15,14 +15,21 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class DashboardController {
 
     @FXML
     private TableView<Song> songTable;
 
-    // 1. Define the ObservableList here
-    private ObservableList<Song> songList = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn<Song, String> titleColumn;
+
+    @FXML
+    private TableColumn<Song, String> artistColumn;
+
+    private final ObservableList<Song> songList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
@@ -31,6 +38,8 @@ public class DashboardController {
         // 2. Bind the list to the table in initialization
         if (songTable != null) {
             songTable.setItems(songList);
+            titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+            artistColumn.setCellValueFactory(new PropertyValueFactory<>("artist"));
             loadSongsFromSupabase();
         } else {
             System.err.println("songTable is null! Check your FXML fx:id.");
@@ -47,21 +56,45 @@ public class DashboardController {
             while (rs.next()) {
                 songList.add(new Song(rs.getInt("id"), rs.getString("title"), rs.getString("artist")));
             }
-
         } catch (SQLException e) {
             System.err.println("Database fetch failed.");
             e.printStackTrace();
         }
     }
 
-    // 4. This method allows AddSongController to update the UI
     public void addSongToList(Song newSong) {
         songList.add(newSong);
+        songTable.refresh();
+
+        System.out.println("Song added! Current list size: " + songList.size());
     }
 
     @FXML
-    public void goToEditSongScene(ActionEvent event) throws IOException {
-        System.out.println("Edit button clicked!");
+    public void goToEditSongScene(ActionEvent event) {
+        Song selectedSong = songTable.getSelectionModel().getSelectedItem();
+
+        if (selectedSong == null) {
+            System.out.println("No song selected!");
+            return;
+        }
+
+        try {
+            // MAKE SURE THIS IS "editsong.fxml" AND NOT "dashboard.fxml"
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("editsong.fxml"));
+            Parent root = loader.load();
+
+            // Get the Edit Controller and pass the song data
+            EditSongController controller = loader.getController();
+            controller.setDashboardController(this);
+            controller.setSongToEdit(selectedSong); // You need to create this method in EditSongController
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -80,6 +113,7 @@ public class DashboardController {
 
             AddSongController controller = loader.getController();
             controller.setDashboardController(this);
+            System.out.println("DEBUG: DashboardController: Link established with AddSongController.");
 
             Stage stage = new Stage();
             stage.setScene(new Scene(root));

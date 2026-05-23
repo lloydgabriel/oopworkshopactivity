@@ -30,7 +30,7 @@
         </GridPane>
         <HBox spacing="15.0" alignment="CENTER">
             <children>
-                <Button text="Save Song" onAction="#handleSaveSong" prefWidth="100.0"/>
+                <Button text="Save Song" onAction="#saveSong" prefWidth="100.0"/>
                 <Button text="Back" onAction="#handleBack" prefWidth="100.0"/>
             </children>
         </HBox>

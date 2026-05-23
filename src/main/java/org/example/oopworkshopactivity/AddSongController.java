@@ -41,10 +41,7 @@ public class AddSongController {
         String title = titleField.getText();
         String artist = artistField.getText();
 
-        if (title.isEmpty() || artist.isEmpty()) {
-            System.out.println("Validation Error: Please fill in all text fields.");
-            return;
-        }
+        System.out.println("DEBUG: Attempting to save: " + title + " - " + artist);
 
         String insertSQL = "INSERT INTO songs (title, artist) VALUES (?, ?)";
 
@@ -55,16 +52,26 @@ public class AddSongController {
             pstmt.setString(2, artist);
             pstmt.executeUpdate();
 
-            System.out.println("Success: Song added to Supabase database container.");
+            System.out.println("DEBUG: Database insert successful!");
 
-            // Return back to the updated dashboard playlist screen right after saving
-            goToDashboard(event);
+            Song newSong = new Song(0, title, artist);
+
+            if (dashboardController != null) {
+                System.out.println("DEBUG: dashboardController is NOT null. Adding to list...");
+                dashboardController.addSongToList(newSong);
+            } else {
+                System.err.println("DEBUG: dashboardController IS NULL!");
+            }
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
 
         } catch (SQLException e) {
-            System.err.println("Failed to insert record across the transaction pooler pipeline.");
+            System.err.println("DEBUG: DATABASE ERROR:");
             e.printStackTrace();
         }
     }
+
     @FXML
     public void handleSaveSong(ActionEvent event) {
         System.out.println("Save button clicked!");

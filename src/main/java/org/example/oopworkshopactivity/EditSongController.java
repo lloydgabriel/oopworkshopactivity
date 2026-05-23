@@ -19,6 +19,12 @@ public class EditSongController {
     @FXML private TextField artistField;
     private int currentSongId;
 
+    private DashboardController dashboardController;
+
+    public void setDashboardController(DashboardController controller) {
+        this.dashboardController = controller;
+    }
+
     public void setSongToEdit(Song song) {
         this.currentSongId = song.getId();
         titleField.setText(song.getTitle());
@@ -28,24 +34,29 @@ public class EditSongController {
     @FXML
     public void handleUpdateSong(ActionEvent event) throws IOException {
         String query = "UPDATE songs SET title = ?, artist = ? WHERE id = ?";
-        try (Connection conn = org.example.oopworkshopactivity.DatabaseHelper.getConnection();
+        try (Connection conn = DatabaseHelper.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
 
             pstmt.setString(1, titleField.getText());
             pstmt.setString(2, artistField.getText());
-            pstmt.setInt(3, currentSongId);
+            pstmt.setInt(3, currentSongId); // This ensures only this specific song updates
             pstmt.executeUpdate();
 
+            if (dashboardController != null) {
+                dashboardController.loadSongsFromSupabase();
+            }
+
             handleCancel(event);
+
         } catch (SQLException e) {
             e.printStackTrace();
+            handleCancel(event);
         }
     }
 
     @FXML
     public void handleCancel(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/org/example/oopworkshopactivity/dashboard.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
+        stage.close();
     }
 }
