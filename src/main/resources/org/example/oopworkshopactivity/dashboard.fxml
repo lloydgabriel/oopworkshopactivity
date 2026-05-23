@@ -22,7 +22,7 @@
         </font>
     </Label>
 
-    <TableView fx:id="playlistTable" VBox.vgrow="ALWAYS">
+    <TableView fx:id="songTable" VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="titleColumn" text="Song Title" prefWidth="250.0" />
             <TableColumn fx:id="artistColumn" text="Artist" prefWidth="230.0" />

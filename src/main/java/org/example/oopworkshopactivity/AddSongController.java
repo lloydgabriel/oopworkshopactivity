@@ -30,7 +30,12 @@ public class AddSongController {
         // Keep this strictly empty or limited to local UI setups!
         // Do NOT make blocking database connections here, or it will freeze the view change.
     }
-
+    @FXML
+    public void handleBack(ActionEvent event) {
+        // Logic to close the current window
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
     @FXML
     public void saveSong(ActionEvent event) {
         String title = titleField.getText();

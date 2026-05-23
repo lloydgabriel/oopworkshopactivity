@@ -1,5 +1,7 @@
 package org.example.oopworkshopactivity;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,12 +19,18 @@ import java.sql.Statement;
 public class DashboardController {
 
     @FXML
-    private TableView<Song> songTable; // Matches your UI table view layout
+    private TableView<Song> songTable;
+
+    // 1. Define the ObservableList here
+    private ObservableList<Song> songList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
-        // Double-check if songTable is null before loading
+        System.out.println("DEBUG: Controller Class: " + this.getClass().getName());
+
+        // 2. Bind the list to the table in initialization
         if (songTable != null) {
+            songTable.setItems(songList);
             loadSongsFromSupabase();
         } else {
             System.err.println("songTable is null! Check your FXML fx:id.");
@@ -30,39 +38,38 @@ public class DashboardController {
     }
 
     public void loadSongsFromSupabase() {
-        // Try-with-resources auto-closes the connection so the pooler doesn't run out of slots
         try (Connection conn = DatabaseHelper.getConnection();
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT title, artist FROM songs")) { // Adjust your query table name if necessary
+             ResultSet rs = stmt.executeQuery("SELECT id, title, artist FROM songs")) {
 
-            // Clear existing layout list elements before reloading
-            songTable.getItems().clear();
-
+            // 3. Add to the ObservableList instead of table.getItems() directly
+            songList.clear();
             while (rs.next()) {
-                int id = rs.getInt("id");
-                String title = rs.getString("title");
-                String artist = rs.getString("artist");
-
-                songTable.getItems().add(new Song(id, title, artist));
+                songList.add(new Song(rs.getInt("id"), rs.getString("title"), rs.getString("artist")));
             }
 
         } catch (SQLException e) {
-            System.err.println("Database fetch timed out or failed. Displaying empty table.");
+            System.err.println("Database fetch failed.");
             e.printStackTrace();
         }
     }
 
+    // 4. This method allows AddSongController to update the UI
+    public void addSongToList(Song newSong) {
+        songList.add(newSong);
+    }
+
     @FXML
     public void goToEditSongScene(ActionEvent event) throws IOException {
-        // Add your logic to switch scenes here, or leave it empty for now
-        // just to stop the crash!
         System.out.println("Edit button clicked!");
     }
 
     @FXML
     public void handleDeleteSong(ActionEvent event) {
-        // Add your logic here, e.g.:
-        System.out.println("Delete button clicked!");
+        Song selectedSong = songTable.getSelectionModel().getSelectedItem();
+        if (selectedSong != null) {
+            songList.remove(selectedSong);
+        }
     }
 
     @FXML
@@ -71,7 +78,6 @@ public class DashboardController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("addsong.fxml"));
             Parent root = loader.load();
 
-            // Get the controller and pass the list
             AddSongController controller = loader.getController();
             controller.setDashboardController(this);
 
